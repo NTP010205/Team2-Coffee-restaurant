@@ -1,0 +1,11 @@
+1.	Khách hàng:	
+•	Đăng ký: Người dùng nhập thông tin (tên , email , mật khẩu) 
+•	Đăng nhập: Khách hàng nhập email và mật khẩu để truy cập hệ thống, quản lý đơn hàng và thông tin cá nhân.
+•	Xem menu: Giúp mọi người có thể lựa chọn món và đưa ra những món bestseller của quán dẫn tiếp cận đến khách hàng.
+•	Đặt hàng: ngày giờ - tên khách hàng - số lượng thức uống- tổng tiền.
+•	Đánh giá: sản phẩm - dịch vụ - nhân viên - khẩu vị.
+•	Xem lịch sử đặt hàng: Giúp mọi người có thể kiểm tra được nhưng món nước mà mình đã từng thưởng thức qua và số tiền họ đã chi ra sử dụng thức uống bên mình.
+•	Thanh điều hướng (Navbar): Thanh menu chính chứa các mục: Giới thiệu – Liên hệ – Ngôn ngữ – Tin tức – Chăm sóc khách hàng; giúp người dùng di chuyển dễ dàng giữa các trang.
+•	Góp ý & đánh giá khách hàng (Chăm sóc khách hàng): Giúp cho mình dễ tiếp cận với khách hàng và sự hài lòng của khách hàng khi sử dụng dịch vụ và thức ăn thức uống bên của hàng của mình.
+•	Tin tức & quảng bá: Giúp khách hàng xem các sản phẩm mới, khuyến mãi, hoặc tin tức sự kiện của quán.
+•	Chatbot hỗ trợ khách hàng: Cung cấp kênh hỗ trợ tự động giúp khách hàng tra cứu nhanh thông tin về sản phẩm, khuyến mãi, và các thắc mắc thường gặp.
