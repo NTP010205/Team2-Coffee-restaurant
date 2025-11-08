@@ -1,0 +1,22 @@
+Chắc chắn rồi. Dưới đây là phần mô tả dự án được viết lại một cách trang trọng và hấp dẫn hơn:
+
+Dự án "XÂY DỰNG WEBSITE ĐỘNG QUẢN LÝ DỮ LIỆU THỰC TẾ QUÁN COFFEE" là một kế hoạch toàn diện do Nhóm 02 (lớp 251_71ITSE30503_0302) thực hiện. Dự án được lên kế hoạch một cách bài bản, bắt đầu từ nền tảng kiến trúc dữ liệu với Sơ đồ quan hệ thực thể (ERD) và Sơ đồ cơ sở dữ liệu (CSDL) chi tiết, sau đó đi sâu vào Sơ đồ chức năng và các kịch bản sử dụng (Use Case) cụ thể.
+
+
+
+
+
+Trọng tâm của dự án là xây dựng một hệ thống CSDL mạnh mẽ, có khả năng quản lý toàn bộ vòng đời hoạt động của quán, từ thông tin Sản phẩm (bao gồm cả Đồ ăn nhẹ và Thức uống), Danh mục, cho đến các thực thể phức tạp hơn như Đơn hàng, Khách hàng, Nhân viên, Tin tức, và các chương trình Khuyến mãi .
+
+Website được thiết kế với hai luồng trải nghiệm riêng biệt, phân quyền rõ ràng cho Khách hàng và Quản trị viên (Admin). Về phía khách hàng, họ sẽ có một trải nghiệm tương tác đầy đủ: từ việc đăng ký/đăng nhập, xem thực đơn, đặt hàng, đến việc để lại đánh giá về sản phẩm và dịch vụ, cũng như dễ dàng xem lại lịch sử đơn hàng của mình. Một chatbot hỗ trợ cũng được tích hợp để giải đáp thắc mắc kịp thời.
+
+
+
+
+Trong khi đó, phía quản trị viên sẽ sở hữu một bộ công cụ quản lý mạnh mẽ. Admin có toàn quyền quản lý sản phẩm (thêm, sửa, xóa), xử lý các đơn hàng của khách, đăng tải tin tức và các chương trình quảng bá. Một trong những tính năng nổi bật nhất dành cho Admin là khả năng thống kê doanh thu theo thời gian (ngày, tháng) và theo dõi các sản phẩm bán chạy nhất, được trực quan hóa thông qua biểu đồ.
+
+
+
+
+
+Để đảm bảo tính thẩm mỹ và hấp dẫn cho trang web, nhóm cũng đã hoàn thành việc thu thập các tài sản hình ảnh quan trọng, bao gồm logo chính thức của quán và bộ hình ảnh chất lượng cao cho các menu (trà sữa, cà phê, trà và bánh ngọt)
