@@ -1,0 +1,20 @@
+4. Quản lý đơn hàng
+•	Lưu thông tin đơn hàng : khách hàng , sản phẩm , số lượng ,ngày đăt , mang đi , tại quán.
+•	Theo dõi số lượng đầu vào và đầu ra của quán.  
+
+5.Thống kê doanh thu
+•	Hiển thị tổng thu nhập theo ngày, tháng.
+•	Thống kê món bán chạy nhất, ít được mua nhất.
+•	Có thể hiển thị biểu đồ trực quan (dùng Chart.js).
+6.Góp ý của khách hàng ( Chăm sóc khách hàng )
+•	Tổng hợp khẩu vị mặt bằng chung của mọi người.
+•	Đánh giá dịch vụ và nhân viên (rất không hài lòng-không hài lòng- bình thường- hài lòng- rất hài lòng).
+
+7. Tin tức & quảng bá
+•	Hiển thị các sản phẩm mới, khuyến mãi, tin về quán.
+•	Quản trị viên có thể thêm / sửa / xóa tin.
+
+8. Chatbot hỗ trợ khách hàng
+•	Giải đáp các thông tin mà khách hàng thắc mắc.
+
+               
