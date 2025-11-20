@@ -1,0 +1,338 @@
+
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Nhập / Đăng Ký - Coffee 12%</title>
+
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f5f0;
+      margin: 0;
+      padding-top: 80px; /* khoảng trống cho header */
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #6f4e37;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover, nav a.active {
+      text-decoration: underline;
+    }
+
+    .container-login {
+      max-width: 400px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .container-login h2 {
+      font-family: 'Dancing Script', cursive;
+      text-align: center;
+      color: #6f4e37;
+      margin-bottom: 10px;
+    }
+
+    .container-login p.subtitle {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .container-login input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .container-login button {
+      width: 100%;
+      padding: 12px;
+      background: #6f4e37;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container-login button:hover {
+      background: #523729;
+    }
+
+    .switch-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .switch-text a {
+      color: #6f4e37;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .switch-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      margin-top: 50px;
+    }
+
+    footer img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer .footer-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      text-shadow: 0 0 5px black;
+      padding: 0 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>☕ Coffee 12%</h1>
+    <nav>
+      <a href="index.php">Sản phẩm</a>
+      <a href="about.php">Giới thiệu</a>
+      <a href="lienhe.php">Liên hệ</a>
+      <a href="news.php">Tin tức</a>
+      <a href="chamsoc.php">Chăm sóc</a>
+      <a href="admin.php" id="adminLink" style="display:none">Admin</a>
+      <a href="dangnhap.php" class="active">Đăng nhập</a>
+    </nav>
+  </header>
+
+  <div class="container-login">
+
+    <!-- Đăng nhập -->
+    <div id="loginForm">
+      <h2>Đăng Nhập</h2>
+      <p class="subtitle">Chào mừng bạn quay trở lại!</p>
+      <input type="text" id="login-username" placeholder="Tên đăng nhập">
+      <input type="password" id="login-password" placeholder="Mật khẩu">
+      <button onclick="login()">Đăng Nhập</button>
+      <p class="switch-text">
+        Chưa có tài khoản? 
+        <a href="#" onclick="showRegister()">Đăng ký ngay</a>
+      </p>
+    </div>
+
+    <!-- Đăng ký -->
+    <div id="registerForm" style="display:none; margin-top:10px;">
+      <h2>Đăng Ký</h2>
+      <p class="subtitle">Trở thành thành viên của quán</p>
+      <input type="text" id="reg-username" placeholder="Tên đăng nhập">
+   
+      <div class="form-group">
+        <!-- Thêm sdt và địa chỉ và giới tính -->
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Nhập số điện thoại">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Địa chỉ</label>
+                <input type="text" id="address" name="address" required placeholder="Nhập địa chỉ của bạn">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Giới tính</label>
+                <select id="gender" name="gender" required>
+                    <option value="">-- Vui lòng chọn giới tính --</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                    <option value="Khác">Khác</option>
+                </select>
+            </div>
+            <input type="email" id="reg-email" placeholder="Email của bạn">
+      <input type="password" id="reg-password" placeholder="Mật khẩu">
+      <button onclick="register()">Đăng Ký</button>
+      <p class="switch-text">
+        Đã có tài khoản? 
+        <a href="#" onclick="showLogin()">Quay lại đăng nhập</a>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER giống trang khác -->
+  <footer>
+    <img src="images/logo.jpg" alt="Footer Banner">
+    <div class="footer-content">
+      <h2>Coffee 12%</h2>
+      <p>Địa chỉ: 123 Nguyễn Trãi, Quận 5, TP.HCM</p>
+      <p>Điện thoại: 0901 234 567</p>
+      <p>Email: contact@example.com</p>
+    </div>
+  </footer>
+
+  <script>
+    // ===== QUẢN LÝ CHUYỂN TAB (Giữ nguyên) =====
+    function showRegister() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('registerForm').style.display = 'block';
+    }
+    function showLogin() {
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('registerForm').style.display = 'none';
+    }
+
+    // ===== HÀM ĐĂNG KÝ (NÂNG CẤP) =====
+    function register() {
+      // 1. Lấy tất cả dữ liệu từ form
+      let username = document.getElementById('reg-username').value;
+      let email = document.getElementById('reg-email').value;
+      let pass = document.getElementById('reg-password').value;
+        // Lấy từ ID mới trong HTML của bạn
+      let phone = document.getElementById('phone').value;
+      let address = document.getElementById('address').value;
+      let gender = document.getElementById('gender').value;
+
+      // 2. Kiểm tra
+      if(username == "" || email == "" || pass == "" || phone == "" || address == "" || gender == "") {
+          alert("Vui lòng nhập đầy đủ tất cả thông tin!");
+          return;
+      }
+
+      // 3. Kiểm tra trùng
+      if (localStorage.getItem('user_' + username)) {
+          alert("Tên đăng nhập này đã tồn tại!");
+          return;
+      }
+
+      // 4. Tạo "gói" tài khoản (dùng JSON)
+      const userAccount = {
+          password: pass,
+          email: email,
+          phone: phone,
+          address: address,
+          gender: gender
+      };
+      localStorage.setItem('user_' + username, JSON.stringify(userAccount)); // Lưu object
+
+      // 5. Tăng số lượng (nếu cần)
+      let count = parseInt(localStorage.getItem('customerCount')) || 0;
+      count++;
+      localStorage.setItem('customerCount', count);
+      
+      // 6. Thông báo và chuyển về trang đăng nhập (theo ý bạn)
+      alert("Đăng ký thành công! Mời bạn đăng nhập.");
+      showLogin(); 
+    }
+
+    // ===== HÀM ĐĂNG NHẬP (NÂNG CẤP) =====
+    function login() {
+      // 1. Lấy thông tin
+      let username = document.getElementById('login-username').value;
+      let pass = document.getElementById('login-password').value;
+
+      // 2. Kiểm tra ADMIN (Tài khoản đặc biệt)
+      if (username === 'chuquan' && pass === 'admin123') {
+          alert("Xin chào Chủ Quán! Đang vào hệ thống...");
+          localStorage.setItem('userRole', 'admin'); 
+          localStorage.setItem('isLoggedIn', 'true');
+          localStorage.setItem('currentUsername', 'Chủ Quán'); 
+          
+          window.location.href = "index.php"; // Back về trang index
+          return;
+      }
+
+      // 3. Kiểm tra KHÁCH HÀNG
+      let savedUserString = localStorage.getItem('user_' + username);
+    
+      if (savedUserString) {
+          // Tìm thấy user, giải nén object
+          const userAccount = JSON.parse(savedUserString);
+
+          // So sánh mật khẩu
+          if (userAccount.password === pass) {
+              // ĐĂNG NHẬP THÀNH CÔNG
+              alert("Đăng nhập thành công!");
+              localStorage.setItem('userRole', 'customer');
+              localStorage.setItem('isLoggedIn', 'true');
+              // Lưu các thông tin
+              localStorage.setItem('currentUsername', username); 
+              localStorage.setItem('currentUserPhone', userAccount.phone);
+              localStorage.setItem('currentUserAddress', userAccount.address);
+              
+              // Back về trang index (theo ý bạn)
+              window.location.href = "index.php"; 
+          } else {
+              alert("Sai mật khẩu rồi!");
+          }
+      } else {
+          alert("Tên đăng nhập không tồn tại!");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+<style>
+header nav a.active {
+    text-decoration: underline; /* gạch chân */
+    color: #ffda79; /* màu nổi bật */
+}
+</style>
+
+<script>
+// Gạch chân menu đang ở
+window.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('header nav a');
+    const currentPath = window.location.pathname.split("/").pop(); // lấy tên file hiện tại
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if(href === currentPath || (href === "#menu" && currentPath === "index.php")) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+});
+</script>
